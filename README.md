@@ -15,11 +15,22 @@ SafeJourney is a full-stack personal safety and navigation app that combines rou
 
 ```text
 Safe-Journey/
+  scripts/
+    supabase/   # Supabase helper utilities
+  tests/
+    manual/     # Manual API/SMS validation scripts
   safejourney/
     backend/    # FastAPI application and data layer
     frontend/   # React application
-  *.md          # Project notes, SOS/SMS setup guides, verification docs
+  *.md          # Project notes, setup guides, verification docs
 ```
+
+Organized utility and manual test paths:
+
+- `scripts/supabase/switch_to_supabase.py`
+- `scripts/supabase/update_supabase_password.py`
+- `tests/manual/test_sms_feature.py`
+- `tests/manual/test_sos.py`
 
 ## Tech Stack
 
@@ -63,7 +74,7 @@ python -m venv .venv
 pip install -r requirements.txt
 ```
 
-Create a `.env` file in `safejourney/backend`:
+Copy `safejourney/backend/.env.example` to `safejourney/backend/.env` and fill values locally:
 
 ```env
 # Database (optional). If omitted, SQLite file safejourney.db is used.

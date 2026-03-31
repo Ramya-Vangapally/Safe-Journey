@@ -4,6 +4,16 @@ backend/venv/
 *.pyc
 __pycache__/
 .env
+*.log
+*.bak
+*.db
+
+# Project-local runtime artifacts
+safejourney/backend/.env
+safejourney/backend/__pycache__/
+safejourney/backend/*.log
+safejourney/backend/*.bak
+safejourney/backend/*.db
 
 # Node
 node_modules/

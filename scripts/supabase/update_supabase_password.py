@@ -6,6 +6,10 @@ UPDATE SUPABASE PASSWORD IN .env
 
 from pathlib import Path
 
+
+REPO_ROOT = Path(__file__).resolve().parents[2]
+ENV_FILE = REPO_ROOT / "safejourney" / "backend" / ".env"
+
 print("\n" + "="*80)
 print("UPDATE SUPABASE PASSWORD")
 print("="*80)
@@ -31,10 +35,12 @@ if not password:
     exit(1)
 
 # Update .env file
-env_file = Path("safejourney/backend/.env")
+if not ENV_FILE.exists():
+  print(f"❌ Could not find .env file at: {ENV_FILE}")
+  exit(1)
 
 # Read current .env
-content = env_file.read_text()
+content = ENV_FILE.read_text(encoding="utf-8")
 
 # Replace the placeholder
 new_content = content.replace(
@@ -43,7 +49,7 @@ new_content = content.replace(
 )
 
 # Write back
-env_file.write_text(new_content)
+ENV_FILE.write_text(new_content, encoding="utf-8")
 
 print("\n" + "="*80)
 print("✅ PASSWORD UPDATED IN .env")
