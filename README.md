@@ -24,6 +24,7 @@ Safe-Journey/
 ## Tech Stack
 
 ### Frontend
+
 - React 18
 - Vite 5
 - Tailwind CSS
@@ -32,6 +33,7 @@ Safe-Journey/
 - Firebase SDK
 
 ### Backend
+
 - FastAPI
 - Uvicorn
 - SQLModel + SQLAlchemy
@@ -85,6 +87,7 @@ uvicorn main:app --reload --port 8000
 ```
 
 API docs:
+
 - Swagger UI: http://localhost:8000/docs
 - Health check: http://localhost:8000/health
 
